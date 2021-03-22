@@ -4,13 +4,13 @@ pipeline {
         stage('Install-dependencies') { 
             steps {
                 // create the virtual environment
-                python3 -m venv venv
+                sh python3 -m venv venv
                 // activate the virtual environment
-                source venv/bin/activate
+                sh source venv/bin/activate
                 // install necessary packages for the app to run
-                pip install -r requirements.txt
+                sh pip install -r requirements.txt
                 // install pytest and pytest-cov (To produce coverage reports)
-                pip install pytest pytest-cov
+                sh pip install pytest pytest-cov
             }
         }
         stage('Test') { 
