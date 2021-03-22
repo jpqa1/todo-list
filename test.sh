@@ -1,3 +1,2 @@
 #! /bin/bash
-#install pytest and pytest-cov (To produce coverage reports)
-pip install pytest pytest-cov
+python3 -m pytest --cov=application --junitxml=junit.xml --cov-report=xml
