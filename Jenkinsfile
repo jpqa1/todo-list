@@ -9,6 +9,8 @@ pipeline {
         source venv/bin/activate
         // install necessary packages for the app to run
         pip install -r requirements.txt
+        // install pytest and pytest-cov (To produce coverage reports)
+        pip install pytest pytest-cov
       }
     }
     stage ('Test'){
